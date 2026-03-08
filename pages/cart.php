@@ -63,7 +63,7 @@
                                         <td>".$r['total_amount']."</td>
                                         <td>
                                             <form action='cart.php' method='post'>
-                                                <button name='confirm_rent' type='submit' >Go Confirm</button>
+                                                <button name='confirm_rent' type='submit' class='confirm-button'>Go Confirm</button>
                                             </form>
                                         </td>
                                     </tr>

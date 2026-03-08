@@ -121,16 +121,21 @@
                             <input type="email" id="email" name="email" value="<?= htmlspecialchars($email) ?>" required disabled>
                         </div>
 
-                        <?php if (!empty($error)) echo "<p id='error'>$error</p>"; ?>
-
                         <button type="submit" name="confirm">Confirm</button>  
                     </section>
                 </form>
             </main>
         </section>
-                    
         
+        <?php
+            if(!empty($error)){
+                echo "<div class='toast toast-error display-none'>
+                        <p>".$error."</p>
+                    </div>";
+            }
+        ?>
         <?php include('../includes/footer.php') ?>
+        <script src="../main.js"></script>
     </body>
 
 </html>

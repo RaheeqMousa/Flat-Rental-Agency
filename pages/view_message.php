@@ -54,8 +54,8 @@
             <?php include('../includes/leftSideNavigation.php') ?>
 
             <main class="row flex-direction-column justify-content-center height-70vh ">
-                <section class="row flex-direction-column justify-content-center gap-8 shadow py-16 px-16 border-16">
-                    <h2 class="mb-8"><?php echo $message['title'] ?></h2>
+                <section class="row flex-direction-column justify-content-center gap-16 shadow py-16 px-16 border-16">
+                    <h2 class="mb-16"><?php echo $message['title'] ?></h2>
                     <p>
                         <strong>From:</strong> 
                         <?php echo $message['sender_account_id'] ? $sender_user['name'] . ", user ID: " . $sender_user['user_id'] : 'System' ?>
@@ -69,34 +69,34 @@
                         <?php echo $message['message_body'] ?>
                     </p>
 
-                    <section>
+                    <section class="row justify-content-center gap-16 mt-8">
                     <?php
                             if($message['confirm']){
 
                                 echo " <form action='RejectActionForMessages.php' method='post'>
                                             <input type='hidden' name='id' value='".$message['confirm']."'>
                                             <input type='hidden' name='title' value='".$message['title']."'>
-                                            <button type='submit'>Reject</button>
+                                            <button type='submit' class='cancel-button'>Reject</button>
                                         </form>";
 
                             if($message['title']==="New flat pending approval"){
 
                                 echo " <form action='ConfirmRentOffer.php' method='post'>
                                             <input type='hidden' name='id' value='".$message['confirm']."'>
-                                            <button type='submit' >Confirm</button>
+                                            <button type='submit' class='confirm-button'>Confirm</button>
                                         </form>";
                             }
                             if($message['title']==="Rented Flat"){
                                 echo " <form action='ConfirmCustomerRent.php' method='post'>
                                         <input type='hidden' name='id' value='".$message['confirm']."'>
-                                        <button type='submit' >Confirm</button>
+                                        <button type='submit' class='confirm-button'>Confirm</button>
                                     </form>";
                             }
                             if($message['title']==="preview request"){
                                 
                                 echo " <form action='ConfirmPreview.php' method='post'>
                                         <input type='hidden' name='id' value='".$message['confirm']."'>
-                                        <button type='submit' >Confirm</button>
+                                        <button type='submit' class='confirm-button'>Confirm</button>
                                     </form>";
                             }
                         

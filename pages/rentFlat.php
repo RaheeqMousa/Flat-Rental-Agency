@@ -118,83 +118,89 @@
             <?php include('../includes/leftSideNavigation.php') ?>
 
             <main class="forms-style">
-                <form method="post" action="rentFlat.php">
+                <form method="post" action="rentFlat.php" class="row flex-direction-column gap-32">
                     <h2>Rent Flat</h2>
                     <input type="hidden" id="flat-id" name="flat_id" value="<?php echo $flat['flat_id'] ?>">
+                    <div class="row gap-32 justify-content-center align-items-start">
+                        <section class="shadow border-16 py-32 px-16 row flex-direction-column gap-16">
+                            <h3>Flat Information</h3>
+                            <div class="row width-100">
+                            <label for="flat-ref">Reference Number:</label>
+                            <input type="text" id="flat-ref" value="<?php echo $flat['refference_number'] ?>" disabled> 
+                            </div>
 
-                    <section>
-                       <label for="flat-ref">Reference Number:</label>
-                       <input type="text" id="flat-ref" value="<?php echo $flat['refference_number'] ?>" disabled> 
-                    </section>
+                            <div class="row width-100">
+                            <label for="available-from">Available from:</label>
+                            <input type="text" id="available-from" value="<?php echo $flat['available_from'] ?>" disabled> 
+                            </div>
+                            <div class="row width-100">
+                            <label for="available-to">Available To:</label>
+                            <input type="text" id="available-to" value="<?php echo $flat['available_to'] ?>" disabled> 
+                            </div>
 
-                    <section>
-                       <label for="available-from">Available from:</label>
-                       <input type="text" id="available-from" value="<?php echo $flat['available_from'] ?>" disabled> 
-                    </section>
-                    <section>
-                       <label for="available-to">Available To:</label>
-                       <input type="text" id="available-to" value="<?php echo $flat['available_to'] ?>" disabled> 
-                    </section>
+                            
+                            <div class="row width-100">
+                                <label for="location">Location: </label>
+                                <input type="text" id="location" value="<?php echo $flat['location'] ?>" disabled>
+                            </div>
+                            
+                            <div class="row width-100">
+                                <label for="flat-address">Flat Address:</label>
+                                <input type="text" id='flat-address'
+                                    value="<?php echo $flat['house_number'] . ', ' .$flat['street'] . ', ' . $flat['city'] . ', ' . $flat['postal_code']; ?>" 
+                                    disabled>
+                            </div>
+                        </section>
+                        <section class="shadow border-16 py-32 px-16 row flex-direction-column gap-16">
+                            <h3>Owner Information</h3>
+                            <div class="row width-100">
+                                <label for="owner-id">Owner ID: </label>
+                                <input type="text" id='owner-id' value="<?php echo $flat['owner_id'] ?>" disabled>
+                            </div>
 
-                    <section>
-                       <label for="refference_number">Reference Number:</label>
-                       <input type="hidden" id="refference_number" name="refference_number" value="<?php echo $flat['refference_number'] ?>" >
-                       <input type="text" id="refference_number" value="<?php echo $flat['refference_number'] ?>" disabled> 
-                    </section>
-                    
-                    <section>
-                        <label for="location">Location: </label>
-                        <input type="text" id="location" value="<?php echo $flat['location'] ?>" disabled>
-                    </section>
-                    
-                    <section>
-                        <label for="flat-address">Flat Address:</label>
-                        <input type="text" id='flat-address'
-                            value="<?php echo $flat['house_number'] . ', ' .$flat['street'] . ', ' . $flat['city'] . ', ' . $flat['postal_code']; ?>" 
-                            disabled>
-                    </section>
+                            <div class="row width-100">
+                                <label for="owner-name">Owner Name: </label>
+                                <input type="text" id="owner-name" value="<?php echo $flat['owner_name'] ?>" disabled>
+                            </div>
 
-                    <section>
-                        <label for="owner-id">Owner ID: </label>
-                        <input type="text" id='owner-id' value="<?php echo $flat['owner_id'] ?>" disabled>
-                    </section>
+                            <div class="row width-100">
+                                <label for="owner-mobile">Owner mobile: </label>
+                                <input type="text" id="owner-mobile" value="<?php echo $flat['mobile_number'] ?>" disabled>
+                            </div>
 
-                    <section>
-                        <label for="owner-name">Owner Name: </label>
-                        <input type="text" id="owner-name" value="<?php echo $flat['owner_name'] ?>" disabled>
-                    </section>
-
-                    <section>
-                        <label for="owner-mobile">Owner mobile: </label>
-                        <input type="text" id="owner-mobile" value="<?php echo $flat['mobile_number'] ?>" disabled>
-                    </section>
-
-                    <section>
-                        <label for="owner-address">Owner Address:</label>
-                        <input type="text" id="owner-address"
-                            value="<?php echo $flat['owner_house_number'] . ', '. $flat['owner_street'] . ', ' . $flat['owner_city'] . ', ' . $flat['owner_postal_code'] ?>" 
-                            disabled>
-                    </section>
-                    
-                    <section>
-                        <label for="rent-start">Rental Start Date: </label>
-                        <input type="date" name="rent-start" id="rent-start" required class="required">
-                    </section>
-                    
-                    <section>
-                        <label for="rent-end">Rental End Date: </label>
-                        <input type="date" name="rent-end" id="rent-end" required class="required">
-                    </section>
-                    
-                    <p class="error"><?php echo $error?></p>
+                            <div class="row width-100">
+                                <label for="owner-address">Owner Address:</label>
+                                <input type="text" id="owner-address"
+                                    value="<?php echo $flat['owner_house_number'] . ', '. $flat['owner_street'] . ', ' . $flat['owner_city'] . ', ' . $flat['owner_postal_code'] ?>" 
+                                                    disabled>
+                            </div>
+                        </section>
+                        <section class="shadow border-16 py-32 px-16 row flex-direction-column gap-16"> 
+                            <h3>Rental Information</h3>      
+                            <div class="row width-100">
+                                <label for="rent-start">Rental Start Date: </label>
+                                <input type="date" name="rent-start" id="rent-start" required class="required">
+                            </div>
+                        
+                            <div class="row width-100">
+                                <label for="rent-end">Rental End Date: </label>
+                                <input type="date" name="rent-end" id="rent-end" required class="required">
+                            </div>
+                        </section>
+                    </div>          
                     <button type="submit">Continue</button>
                 </form>
             </main>
-
         </section>
 
-
         <?php include('../includes/footer.php') ?>
-
+        <?php
+            if(!empty($error)){
+                echo "<div class='toast toast-error display-none'>
+                        <p>".$error."</p>
+                    </div>";
+            }
+        ?>
+        <script src="../main.js"></script>
     </body>
 </html>

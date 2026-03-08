@@ -5,18 +5,20 @@
     if (!isset($_POST['id'])) {
         header('Location:../index.html');
     }
-    $ids=explode(' ',$_POST['id']);
-    $preview_id=$ids[0];
-    $customer_account_id=$ids[1];
-    $owner_id=$ids[2];
-    
-    $pdo=connect_db();
-    $query="update preview_requests set status=:status where preview_id=:id;";
-    $statement=$pdo->prepare($query);
-    $statement->bindValue(':id',$preview_id);
-    $statement->bindValue(':status','approved');
+    $ids = explode(' ', $_POST['id']);
+    $preview_id = trim($ids[0]);
+    $customer_account_id = trim($ids[1]);
+    $owner_id = trim($ids[2]);
+
+    $pdo = connect_db();
+
+    $query = "UPDATE preview_requests SET status = :status WHERE preview_id = :id";
+    $statement = $pdo->prepare($query);
+    $statement->bindValue(':id', $preview_id);
+    $statement->bindValue(':status', 'approved');
     $statement->execute();
-    
+
+    echo "preview_id: '$preview_id' updated rows: ".$statement->rowCount();
     
     $query="select s.name as name, s.mobile_number as mobile_number from users s where user_id=:id;";
     $statement=$pdo->prepare($query);
@@ -52,8 +54,8 @@
 
             <?php include('../includes/leftSideNavigation.php') ?>
 
-            <main>             
-                <section class="message-style">
+            <main class="height-70vh row flex-direction-column justify-content-center align-items-center">             
+                <section class="shadow border-16 py-32 px-16  ">
                     <?php
                        echo "<p>Customer preview confirmed successfully.</p>";
                     ?>

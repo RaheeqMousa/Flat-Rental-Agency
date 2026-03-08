@@ -31,7 +31,7 @@
         $statement->execute();
         
         $query = "insert into messages (receiver_account_id, title, message_body, status) values 
-                    (:receiver, , :title, :mes, 'unread');";
+                    (:receiver, :title, :mes, 'unread');";
         $statement = $pdo->prepare($query);
     
         $statement->bindValue(':receiver','3');
@@ -61,32 +61,37 @@
 
             <?php include('../includes/leftSideNavigation.php') ?>
 
-            <main class="forms-style">
-                <section>
-                    <h2>Rental summary</h2>
-                    <p>Flat Reference Number: <?php echo $ref; ?></p>
-                    <p>Rental Duration: <?php echo $months ?> month</p>
-                    <p>Total Rent: <?php echo $total ?></p>
-                </section>
+            <main class="forms-style row flex-direction-column justify-content-center align-items-center gap-32 width-100">
                 
+                <form method="post" action="ConfirmRent.php" class="">
+                    
 
-                <form method="post" action="ConfirmRent.php">
-                    <section>
+                    <div class="shadow border-16 py-32 px-16 row  flex-direction-column justify-content-center align-items-center gap-32">
+<h2>Confirm Rent</h2>
+                    <div class="row flex-direction-column gap-8">           
+                        <p>Flat Reference Number: <?php echo $ref; ?></p>
+                        <p>Rental Duration: <?php echo $months ?> month</p>
+                        <p>Total Rent: <?php echo $total ?></p>
+                    </div>
+
+                    <div class="row width-100">
                         <label for="card_number">Credit Card Number (9 digits):</label>
                         <input type="text" id="card_number" name="card_number" placeholder="123412340" pattern="\d{9}" required class="required"><br>
-                    </section>
+                    </div>
 
-                    <section>
+                    <div class="row width-100">
                         <label for="expiry_date">Expiry Date:</label>
                         <input type="date" id="expiry_date" name="expiry_date" required class="required"><br>   
-                    </section>
+                    </div>
 
-                    <section>
+                    <div class="row width-100">
                         <label for="card_name">Card Name:</label>
                         <input type="text" id="card_name" name="card_name" placeholder="Raheeq Mousa" required class="required"><br>
-                    </section>
+                    </div>
+<button type="submit">Confirm Rent</button>
+                    </div>
 
-                    <button type="submit">Confirm Rent</button>
+                    
                 </form>
             </main>
 

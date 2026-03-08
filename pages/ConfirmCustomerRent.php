@@ -103,8 +103,8 @@
 
             <?php include('../includes/leftSideNavigation.php') ?>
 
-            <main>             
-                <section class="message-style">
+            <main class="height-70vh row flex-direction-column justify-content-center align-items-center gap-32">             
+                <section class="shadow py-32 px-16 border-16">
                     <?php
                         echo "<p>Customer rent confirmed successfully.</p>";
                     ?>

@@ -22,220 +22,199 @@
             <?php include('../includes/leftSideNavigation.php') ?>
             <main class="forms-style">
 
-                <form action="offerFlatSubmit.php" method="post" enctype="multipart/form-data">
-                    <?php echo "<p id='error'>". $_SESSION['error'] ?? ''."</p>" ?>
-                    <br>
+                <form action="offerFlatSubmit.php" method="post" enctype="multipart/form-data" class=" row flex-direction-column gap-32">
+                    <h2 >Offer Flat</h2>
+                    <section class="row gap-32 width-100 align-items-start">
 
-                    <fieldset>
-                        <legend>Flat Address</legend>
-                        <section>
-                            <label for="house_number">House Number:</label>
-                            <input id="house_number" name="house_number" required class="required" type="text" placeholder="Enter House Number">
-                        </section>
-                        <br>
-                        <section>
-                            <label for="street_name">Street Name:</label>
-                            <input id="street_name" name="street_name" required class="required" placeholder="Enter street name">
-                        </section>
-                        <br>
-                        <section>
-                            <label for="city">City:</label>
-                            <input id="city" name="city" required class="required" type="text" placeholder="Enter City">
-                        </section>
-                        <br>
-                        <section>
-                            <label for="postal_code">Postal Code:</label>
-                            <input id="postal_code" name="postal_code" required class="required" type="text" placeholder="Enter Postal Code">
-                        </section>
-                    </fieldset>
+                        <section class="row border-16 shadow py-32 px-16 gap-16 flex-direction-column">
+                            <h3>Flat Details</h3>
 
-                    <fieldset>
-                        <legend>Flat Details</legend>
-
-                        <section>
-                            <label for="location">Location:</label>
-                            <input type="text" name="location" id="location" required>
-                        </section>
-                        
-                        <section>
-                            <label for="rent">Rent/Month:</label>
-                            <input type="number" name="rent" id="rent" required class="required">
-                        </section>
-                        
-                        <section>
-                            <label for="available_date_from">Date Available From:</label>
-                            <input type="date" name="available_date_from" id="available_date_from" required class="required">
-                        </section>
-                        
-
-                        <section>
-                            <label for="available_date_to">Date Available To:</label>
-                            <input type="date" name="available_date_to" id="available_date_to" required class="required">
-                        </section>
-
-                        <section>
-                            <label for="bedrooms">Bedrooms:</label>
-                            <input type="number" name="bedrooms" id="bedrooms" min="1" required class="required">
-                        </section>
-                        <section>
-                            <label for="bathrooms">Bathrooms:</label>
-                            <input type="number" name="bathrooms" id="bathrooms" min="1" required class="required">
-                        </section>
-                        <section>
-                            <label for="size">Size (sqm):</label>
-                            <input type="number" name="size" id="size" required class="required">
-                        </section>
-                        <section>
-                            <label for="conditions">Conditions:</label>
-                            <textarea name="conditions" id="conditions" ></textarea>
-                        </section>
-
-                        <section>
-                            <section>
-                                <label for="heating">Heating System</label>
-                                <input type="checkbox" name="heating" id="heating">
-                            </section>
+                            <div class="row gap-8 width-100">
+                                <label for="location">Location:</label>
+                                <input type="text" name="location" id="location" required>
+                            </div>
                             
-                            <section>
-                                <label for="air_condition">Air Conditioning</label>
-                                <input type="checkbox" name="air_condition" id="air_condition">
-                            </section>
+                            <div class="row gap-8 width-100">
+                                <label for="rent">Rent/Month:</label>
+                                <input type="number" name="rent" id="rent" required class="required">
+                            </div>
+                            
+                            <div class="row gap-8 width-100">
+                                <label for="available_date_from">Date Available From:</label>
+                                <input type="date" name="available_date_from" id="available_date_from" required class="required">
+                            </div>
+                            
 
-                            <section>
-                                <label for="access_control">Access Control</label><br>
-                                <input type="checkbox" name="access_control" id="access_control"> 
-                            </section>   
-                        </section>
-                        
-                        <section>
-                            <p>Features:</p>
-                            <section>
-                                <label for="parking">Car Parking</label>
-                                <input type="checkbox" name="parking" id="parking" value="parking">
-                            </section>
+                            <div class="row gap-8 width-100">
+                                <label for="available_date_to">Date Available To:</label>
+                                <input type="date" name="available_date_to" id="available_date_to" required class="required">
+                            </div>
 
-                            <section>
-                                <label>Backyard</label>
-                                <section>
-                                    <label for="backyard_individual">Backyard (Individual)</label>
-                                    <input type="radio" name="backyard" id="backyard_individual" value="individual">
-                                </section>
-    
-                                <section>
-                                    <label for="backyard_shared">Backyard (Shared)</label>
-                                    <input type="radio" name="backyard" id="backyard_shared" value="shared">
-                                </section>
-                            </section>
+                            <div class="row gap-8 width-100">
+                                <label for="bedrooms">Bedrooms:</label>
+                                <input type="number" name="bedrooms" id="bedrooms" min="1" required class="required">
+                            </div>
+                            <div class="row gap-8 width-100">
+                                <label for="bathrooms">Bathrooms:</label>
+                                <input type="number" name="bathrooms" id="bathrooms" min="1" required class="required">
+                            </div>
+                            <div class="row gap-8 width-100">
+                                <label for="size">Size (sqm):</label>
+                                <input type="number" name="size" id="size" required class="required">
+                            </div>
+                            <div class="row gap-8 width-100">
+                                <label for="conditions">Conditions:</label>
+                                <textarea name="conditions" id="conditions" cols='40' rows='3' ></textarea>
+                            </div>
 
-                            <section>
-                                <label for="playground">Playground</label>
-                                <input type="checkbox" name="playground" id="playground" value="playground"> 
-                            </section>
-
-                            <section>
-                                <label for="furnished">furnished</label>
-                                <input type="checkbox" name="furnished" id="furnished" value="furnished">
-                            </section>
-
-                            <section>
-                                <label for="storage">Storage</label><br>
-                                <input type="checkbox" name="feature" id="storage" value="storage">
-                            </section>         
-
-                            <section>
+                            <div class="row gap-8 width-100">
                                 <label for="images">Flat Photos (at least 3):</label>
-                                <input type="file" name="images[]" id="images" multiple accept="image/*" required class="required">
+                                <input type="file" name="images[]" id="images" multiple accept="image/*" required>
+                            </div>
+                        </section>
+
+                        <div class="row justify-content-center gap-32 flex-direction-column">
+                        <section class="row border-16 shadow py-32 px-16 gap-16 flex-direction-column">
+                            <h3>Flat Address</h3>
+                            <div class="row gap-8 width-100">
+                                <label for="house_number">House Number:</label>
+                                <input id="house_number" name="house_number" required class="required" type="text" placeholder="Enter House Number">
+                            </div>
+                            <div class="row gap-8 width-100">
+                                <label for="street_name">Street Name:</label>
+                                <input id="street_name" name="street_name" required class="required" placeholder="Enter street name">
+                            </div>
+                            <div class="row gap-8 width-100">
+                                <label for="city">City:</label>
+                                <input id="city" name="city" required class="required" type="text" placeholder="Enter City">
+                            </div>
+                            <div class="row gap-8 width-100">
+                                <label for="postal_code">Postal Code:</label>
+                                <input id="postal_code" name="postal_code" required class="required" type="text" placeholder="Enter Postal Code">
+                            </div>
+                        </section>
+                        <section class="row border-16 shadow py-32 px-16 gap-16 flex-direction-column">
+                            <h3>Marketing Information (Optional)</h3>
+                            <div class="row gap-8 width-100">
+                                <label for="title">Title:</label>
+                                <input type="text" name="title" id="title">
+                            </div>
+                            <div class="row gap-8 width-100">
+                                <label for="description">Description:</label>
+                                <textarea name="description" id="description" cols='40' rows='3'></textarea>
+                            </div>                   
+                            <div class="row gap-8 width-100">
+                                <label for="page_url">URL:</label>
+                                <input type="url" name="page_url" id="page_url" placeholder="http:/....">
+                            </div>
+                        </section>
+                        </div>
+
+
+                        <div class="row justify-content-center gap-32 align-items-start">
+                            <section class="row border-16 shadow py-32 px-16 gap-16 flex-direction-column section">
+                                <h3>Utilities</h3>
+
+                                <div class="row flex-direction-column gap-8 width-100 shadow border-16 py-32 px-16 box-sizing-border-box">
+                                    <label>Backyard</label>
+                                    <div class="row gap-8 width-100 justify-content-start"> 
+                                        <label for="backyard_individual">Individual</label>
+                                        <input type="radio" name="backyard" id="backyard_individual" value="individual">
+                                    </div>
+                                    <div class="row gap-8 width-100 justify-content-start">
+                                        <label for="backyard_shared">Shared</label>
+                                        <input type="radio" name="backyard" id="backyard_shared" value="shared">
+                                    </div>
+                                </div>
+                                <div class="row flex-direction-column justify-content-start width-100 gap-8 border-16 py-32 px-16 box-sizing-border-box">
+                                    <div class="row gap-8 width-100 justify-content-start">
+                                        <label for="playground">Playground</label>
+                                        <input type="checkbox" name="playground" id="playground">
+                                    </div>
+                                    <div class="row gap-8 width-100 justify-content-start">
+                                        <label for="furnished">Furnished</label>
+                                        <input type="checkbox" name="furnished" id="furnished">
+                                    </div>
+                                    <div class="row gap-8 width-100 justify-content-start">
+                                        <label for="storage">Storage</label>
+                                        <input type="checkbox" name="feature" id="storage">
+                                    </div>
+                                </div> 
                             </section>
-                        </section>
-                         
-                    </fieldset>
 
-                    <fieldset>
-                        <legend>Marketing Information (Optional)</legend>
-                        <section>
-                            <label for="title">Title:</label>
-                            <input type="text" name="title" id="title">
-                        </section>
+                            <section class="row border-16 shadow py-32 px-16 gap-16 flex-direction-column section">
+                                <h3>Features</h3>
+                                    <div class="row gap-8 width-100 justify-content-start">
+                                        <label for="heating">Heating System</label>
+                                        <input type="checkbox" name="heating" id="heating">
+                                    </div>
+                                    <div class="row gap-8 width-100 justify-content-start">
+                                        <label for="air_condition">Air Conditioning</label>
+                                        <input type="checkbox" name="air_condition" id="air_condition">
+                                    </div>
+                                    <div class="row gap-8 width-100 justify-content-start">
+                                        <label for="access_control">Access Control</label>
+                                        <input type="checkbox" name="access_control" id="access_control">
+                                    </div>
                         
+                                    <div class="row gap-8 width-100 justify-content-start">
+                                        <label for="parking">Car Parking</label>
+                                        <input type="checkbox" name="parking" id="parking">
+                                    </div>
 
-                        <section>
-                            <label for="description">Description:</label>
-                            <textarea name="description" id="description" cols='30' rows='3'></textarea>
-                        </section>
-                        
-                        <section>
-                            <label for="page_url">URL:</label>
-                            <input type="url" name="page_url" id="page_url" placeholder="http:/....">
-                        </section>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Timetable Information</legend>
-                        <section>
-                            <label >Available Days:</label>
-
-                            <section>
-                                <section>
-                                    <label for="monday">Monday</label>
-                                    <input type="checkbox" id="monday" name="available_days[]" value="Monday">   
-                                </section>
-
-                                <section>
-                                    <label for="tuesday">Tuesday</label>
-                                    <input type="checkbox" id="tuesday" name="available_days[]" value="Tuesday">
-                                </section>
-
-                                <section>
-                                    <label for="wednesday">Wednesday</label>
-                                    <input type="checkbox" id="wednesday" name="available_days[]" value="Wednesday">
-                                </section>
-
-                                <section>
-                                    <label for="thursday">Thursday</label>
-                                    <input type="checkbox" id="thursday" name="available_days[]" value="Thursday">
-                                </section>
-
-                                <section>
-                                    <label for="friday">Friday</label>
-                                    <input type="checkbox" id="friday" name="available_days[]" value="Friday">
-                                </section>
-
-                                <section>
-                                    <label for="saturday">Saturday</label>
-                                    <input type="checkbox" id="saturday" name="available_days[]" value="Saturday">
-                                </section>
-
-                                <section>
-                                    <label for="sunday">Sunday</label>
-                                    <input type="checkbox" id="sunday" name="available_days[]" value="Sunday">
-                                </section>
                             </section>
-                        </section>
+                        </div>            
+
+                        <section class="row border-16 shadow py-32 px-16 gap-16 flex-direction-column">
+    <h3>Schedule Flat Previews</h3>
+
+    <div class="row flex-direction-column gap-16 width-100 shadow border-16 py-32 px-16 box-sizing-border-box">
+
+        <div class="row gap-8 width-100">
+            <label>Preview Date:</label>
+            <input type="date" name="preview_date[]" required>
+        </div>
+
+        <div class="row gap-8 width-100">
+            <label>Start Time:</label>
+            <input type="time" name="preview_time_start[]" required>
+        </div>
+
+        <div class="row gap-8 width-100">
+            <label>End Time:</label>
+            <input type="time" name="preview_time_end[]" required>
+        </div>
+
+        <div class="row gap-8 width-100">
+            <label>Contact Phone:</label>
+            <input type="tel" name="phone[]" placeholder="0599232345" required>
+        </div>
+
+    </div>
+
+    <div class="row width-100 justify-content-center">
+        <button type="button" id="add-preview">Add Another Preview</button>
+    </div>
+</section>
+
                         
-                        <section>
-                            <label for="time">Time start:</label>
-                            <input type="text" name="start-time" id="time" required class="required" placeholder="10:00 AM">
-                        </section>
-
-                        <section>
-                            <label for="end-time">Time end:</label>
-                            <input type="text" name="end-time" id="end-time" required class="required" placeholder="10:30AM">
-                        </section>
-                        
-                        <section>
-                            <label for="phone">Contact Phone:</label>
-                            <input type="text" name="phone" id="phone" required class="required">
-                        </section>
-                    </fieldset>
-
-                    
-                    <button type="submit">Send To Approve</button>
-
+                    </section>
+<button type="submit">Submit Flat Offer</button>
                 </form>
             </main>
         </section>
 
         <?php include('../includes/footer.php') ?>
+        <?php
+            if(!empty($_SESSION['error'])){
+                echo "<div class='toast toast-error display-none'>
+                        <p>".$_SESSION['error']."</p>
+                    </div>";
+                unset($_SESSION['error']);
+            }
+        ?>
+
+        <script src="../main.js"></script>
     </body>
 
 </html>

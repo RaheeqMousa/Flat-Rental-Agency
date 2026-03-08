@@ -91,19 +91,27 @@
         header("Location:OfferFlat.php");
     }
 
-    $query="insert into flat_preview (flat_id, preview_day, preview_time_start, preview_time_end, phone)
-                    values (:flat_id, :d, :time_from, :time_to, :phone);";
-    
-    foreach($days as $day){
-        $statement = $pdo->prepare($query);
-        $statement->bindValue(':flat_id',$last_flat_id);
-        $statement->bindValue(':d',$day);
-        $statement->bindValue(':time_from',$_POST['start-time']);
-        $statement->bindValue(':time_to',$_POST['end-time']);
-        $statement->bindValue(':phone',$_POST['phone']);
+    $query = "INSERT INTO flat_preview 
+          (flat_id, preview_date, preview_time_start, preview_time_end, phone)
+          VALUES (:flat_id, :date, :time_from, :time_to, :phone);";
+
+    $statement = $pdo->prepare($query);
+
+    $dates = $_POST['preview_date'];
+    $start_times = $_POST['preview_time_start'];
+    $end_times = $_POST['preview_time_end'];
+    $phones = $_POST['phone'];
+
+    for ($i = 0; $i < count($dates); $i++) {
+
+        $statement->bindValue(':flat_id', $last_flat_id);
+        $statement->bindValue(':date', $dates[$i]);
+        $statement->bindValue(':time_from', $start_times[$i]);
+        $statement->bindValue(':time_to', $end_times[$i]);
+        $statement->bindValue(':phone', $phones[$i]);
+
         $statement->execute();
     }
-    
     
     if (isset($_POST['title']) || isset($_POST['description']) || isset($_POST['page_url']) ) {
 

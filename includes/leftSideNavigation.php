@@ -23,7 +23,7 @@
         if ($user) {
             // Owner menu
             if ($role === 'owner') {
-                renderMenuItem('OfferFlat.php', 'Offer Flats', 'OfferFlat.php');
+                renderMenuItem('OfferFlat.php', 'Offer Flats', 'OfferFlat.php', isset($index_page) ? 'Images/house-solid-full.svg' : '../Images/house-solid-full.svg');
             } 
             // Customer menu
             elseif ($role === 'customer') {

@@ -202,11 +202,7 @@
                                     }
                                     echo "
                                         <tr class='$status'>
-                                            <td>
-                                                <a href='user_card.php?id=". $rent['refference_number']. " target='_blank'>".
-                                                    $rent['refference_number']
-                                                ."</a>
-                                            </td>
+                                            <td>". $rent['refference_number']. "</td>
                                             <td>". $rent['monthly_rental_cost']. "</td>
                                             <td>". $rent['start_date']. "</td>
                                             <td>". $rent['end_date']. "</td>

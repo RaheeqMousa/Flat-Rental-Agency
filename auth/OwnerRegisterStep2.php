@@ -64,7 +64,7 @@
                 
                 <form method="post" action="OwnerRegisterStep2.php">
                     <section class="row gap-16 flex-direction-column shadow border-16 py-32 px-32">
-                        <h2>Owner Step-2 Registeration</h2>
+                        <h2>Owner Step-2 Registeration (Account Information)</h2>
 
                         <div class="row width-100">
                             <label for="id">Customer ID:</label>
@@ -84,7 +84,7 @@
                         
                         <div class="row width-100">
                             <label for="pass">Password:</label>
-                            <input type="password" id="pass" name="password" required class="required" pattern="^\d.{4,13}[a-z]$">
+                            <input type="password" id="pass" name="password" required class="required" pattern="^\d.{4,13}[a-z]$" title="Password must be 6-15 characters, start with a digit and end with a lowercase letter">
                         </div>
                         
                         <div class="row width-100">
@@ -92,16 +92,21 @@
                             <input type="password" id="confirm-pass" name="confirm-pass" required class="required">
                         </div>
 
-                        <?php if (!empty($error)) echo "<p id='error'>$error</p>"; ?>
-
                         <button type="submit">Register</button>
                     </section>  
                 </form>
             </main>
         </section>
-                    
         
+        <?php
+            if(!empty($error)){
+                echo "<div class='toast toast-error display-none'>
+                        <p>".$error."</p>
+                    </div>";
+            }
+        ?>
         <?php include('../includes/footer.php') ?>
+        <script src="../main.js"></script>
     </body>
 
 </html>

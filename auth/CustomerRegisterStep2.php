@@ -2,6 +2,7 @@
     session_start();
     $auth_page=true;
 
+
     //if regestration is succes then redirect to step3
     require_once('../database.inc.php');
 
@@ -65,7 +66,7 @@
             <form method="post" action="CustomerRegisterStep2.php">
                 
                 <section class="row gap-16 flex-direction-column shadow border-16 py-32 px-32">
-                    <h2 class="mb-8">Customer Step-2 Registeration</h2>
+                    <h2 class="mb-8">Customer Step-2 Registeration (Account Information)</h2>
 
                     <div class="row width-100">
                         <label for="id">Customer ID:</label>
@@ -92,7 +93,6 @@
                         <label for="confirm-pass">Confirm Password:</label>
                         <input type="password" id="confirm-pass" name="confirm-pass" required class="required">
                     </div>
-                    <?php if (!empty($error)) echo "<p id='error'>$error</p>"; ?>
 
                     <button type="submit">Register</button> 
                 </section>
@@ -100,9 +100,16 @@
             </form>
         </main>
         </section>
-                    
         
+        <?php
+            if(!empty($error)){
+                echo "<div class='toast toast-error display-none'>
+                        <p>".$error."</p>
+                    </div>";
+            }
+        ?>
         <?php include('../includes/footer.php') ?>
+        <script src="../main.js"></script>
     </body>
 
 </html>

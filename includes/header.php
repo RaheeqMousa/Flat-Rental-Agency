@@ -26,8 +26,9 @@ function getImagePath($filename) {
 
 <header class="row justify-content-between align-items-center">
     <!-- Logo -->
-    <section>
+    <section class="row align-items-center gap-8">
         <img src="<?php echo getImagePath('logo.svg'); ?>" alt="3lRaheeq agency logo" title="3lRaheeq agency" width="150" height="50" />
+        <h1>3lRaheeq agency</h1>
     </section>
 
     <!-- Main navigation -->

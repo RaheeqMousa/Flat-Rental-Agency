@@ -28,6 +28,41 @@ function prevSlide(){
     showSlide(slideIndex);
 }
 
-window.onload = function(){
-    showSlide(slideIndex);
-};
+document.addEventListener("DOMContentLoaded", function () {
+    slides = document.querySelectorAll(".slide");
+    showSlide(slideIndex);   // show first image
+    console.log(slideIndex);
+});
+
+/*..................Toast....................*/
+
+let toast = document.querySelector(".toast");
+function showToast(){
+    if(!toast)
+        return;
+
+    toast.classList.remove("display-none");
+
+    setTimeout(function(){
+        toast.classList.add("display-none");
+    }, 2000);
+}
+
+
+window.addEventListener("DOMContentLoaded",()=>{
+    showToast();
+});
+
+/*............................................................*/
+
+const addBtn = document.getElementById('add-preview');
+if(addBtn){
+addBtn.addEventListener('click', () => {
+    const container = addBtn.closest('.row.flex-direction-column');
+    const firstRow = container.querySelector('.row.gap-16.width-100');
+    const clone = firstRow.cloneNode(true);
+
+    // Clear the input values
+    clone.querySelectorAll('input').forEach(input => input.value = '');
+    container.insertBefore(clone, addBtn.parentElement);
+});}

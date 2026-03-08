@@ -77,7 +77,7 @@
 
             <?php include('../includes/leftSideNavigation.php') ?>
 
-            <main class="message-style">             
+            <main class="height-70vh row flex-direction-column justify-content-center align-items-center">             
                     <?php
                        echo "<p>Owner Rent Offer Confirmed Successfully.</p>";
                     ?>

@@ -84,12 +84,97 @@ h1,h2,h3,h4,h5,h6,body,p{
     margin-bottom:16px;
 }
 
+.mb-32{
+    margin-bottom:32px;
+}
+
+.mt-8{
+    margin-top: 8px;
+}
+
 .height-70vh{
     min-height: 70vh;
 }
 
 .box-sizing-border-box{
     box-sizing: border-box;
+}
+
+.display-none{
+    display: none;
+}
+
+.disabled-button {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+
+.confirm-button {
+    background-color: #4AB58A;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.confirm-button:hover {
+    background-color: #333;
+}
+
+.cancel-button {
+    background-color: #FF4C4C;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.cancel-button:hover {
+    background-color: #333;
+}
+
+/*..................................................*/
+
+.toast{
+    position:fixed;
+    top: 40px;
+    right: 0px;
+    z-index: 1000;
+    opacity:0;
+    padding: 16px 24px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    animation: toast-appear 2s ease forwards;
+}
+
+.toast-success{
+    background-color: #4BB543;
+}
+
+.toast-error{
+    background-color: #FF4C4C;
+}
+
+@keyframes toast-appear {
+    0%{
+        transform:translateX(0);
+        opacity:0;
+    }
+    100%{
+        transform:translateX(-100%);
+        opacity:1;
+    }
 }
 
 /*...............................................................*/
@@ -178,7 +263,8 @@ header section{
 
 h1{
     font-style: italic;
-    font-family:Verdana, Tahoma, sans-serif;
+    font-family:'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
 }
 
 /*..............................................*/
@@ -457,7 +543,7 @@ a[href^="http"]:hover{
 
 .forms-style h2{
     font-size: 28px;
-    margin-bottom: 10px;
+    margin-bottom: 32px;
     color: #1a2a44;
 }
 
@@ -471,6 +557,17 @@ a[href^="http"]:hover{
     padding-left: 8px;
 }
 
+.forms-style form input[type='checkbox'],
+.forms-style form input[type='radio']{
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+
+.forms-style form .section{
+    width:fit-content;
+}
+
 .forms-style form input:focus,
 .forms-style form select:focus{
     outline: none;
@@ -479,7 +576,6 @@ a[href^="http"]:hover{
 }
 
 .forms-style form label{
-    margin-bottom: 5px;
     font-size: 18px;
     padding: 2px;
     font-size: 16px;
@@ -879,15 +975,7 @@ a[href^="http"]:hover{
 .available_preview { 
     background-color: white; 
 }
-.book-button { 
-    background-color: #4AB58A;
-    color: white;
-}
 
-.disabled-button {
-    background-color: #5a5959;
-    color: white;
-}
 
 /*...............................................*/
 
@@ -971,4 +1059,18 @@ figure img {
 
 .flat-detail form button:hover {
     background: #333;
+}
+
+
+/*...............................*/
+
+.filter-btn{
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }

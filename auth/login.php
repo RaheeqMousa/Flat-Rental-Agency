@@ -34,10 +34,6 @@
                                 <label for="pass">Password</label>
                                 <input id="pass" name="pass" type="password" required class="required" placeholder="Enter Password">
                             </section>
-
-                            <p id="error">
-                                <?php echo $_SESSION['error'] ?? ''; ?>
-                            </p>
                         </div>
 
                         <button type="submit">Login</button>
@@ -48,8 +44,16 @@
 
         </section>
 
+        <?php
+            if(!empty($_SESSION['error'])){
+                echo "<div class='toast toast-error display-none'>
+                        <p>".$_SESSION['error']."</p>
+                    </div>";
+                unset($_SESSION['error']);
+            }
+        ?>
         
         <?php include('../includes/footer.php') ?>
-
+        <script src="../main.js"></script>
     </body>
 </html>
