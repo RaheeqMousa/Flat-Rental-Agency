@@ -50,7 +50,7 @@ A comprehensive web-based platform for managing flat rentals, including apartmen
 ## User Flow
 
 ### Customer Journey
-1. Register/Login → 2. Browse Flats → 3. View Details → 4. Book Preview → 5. Submit Rental Request → 6. Receive Confirmation → 7. View Rented Flats
+Register/Login → 2. Browse Flats → 3. View Details → 4. Book Preview → 5. Submit Rental Request → 6. Receive Confirmation → 7. View Rented Flats
 
 ### Owner Journey
-1. Register/Login → 2. Create Flat Listing → 3. Set Preview Times → 4. Receive Applications → 5. Accept/Reject → 6. Confirm Rental → 7. Manage Rentals
+Register/Login → 2. Create Flat Listing → 3. Set Preview Times → 4. Receive Applications → 5. Accept/Reject → 6. Confirm Rental → 7. Manage Rentals
