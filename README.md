@@ -3,7 +3,7 @@
 A comprehensive web-based platform for managing flat rentals, including apartment listings, rental requests, preview scheduling, and customer-owner communications.
 
 # Project Demo
-[Watch Full Video Demo][(https://drive.google.com/file/d/1o7ciXhJ_5BJOC6F6KF61vPzU5Fput6Fg/view?usp=drive_link)](https://drive.google.com/file/d/1XGKaOwqcEbJLwW517T2o93zkSpP77Lzg/view?usp=drive_link)
+[Watch Full Video Demo](https://drive.google.com/file/d/1XGKaOwqcEbJLwW517T2o93zkSpP77Lzg/view?usp=drive_link)
 
 ## Project Overview
 
